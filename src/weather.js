@@ -1,4 +1,5 @@
 import WeatherService from "./service"
+import $ from 'jquery';
 
 $(document).ready(function() {
   $('#weatherLocation').click(function() {
