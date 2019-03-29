@@ -2,7 +2,7 @@ import $ from "jquery";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import { DoctorDetails } from "./app-logic";
+import { DoctorDetails } from "./doctor";
 
 $(document).ready(function() {
   let searchType = "";
