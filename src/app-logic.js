@@ -1,4 +1,4 @@
-export class DoctorInfo
+export class DoctorDetails
 {
   getDoctor(searchType,searchParameter,location)
   {
