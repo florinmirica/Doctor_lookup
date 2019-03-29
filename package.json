@@ -5,7 +5,7 @@
   "main": "weather.js",
   "scripts": {
     "build": "webpack --mode development",
-    "start": "npm run build; webpack-dev-server --open --mode development",
+    "start": "webpack-dev-server --open --mode development",
     "test": "./node_modules/karma/bin/karma start karma.conf.js"
   },
   "repository": {
@@ -21,8 +21,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.7",
-    "webpack": "4.19.1"
+    "popper.js": "^1.14.7"
   },
   "homepage": "",
   "devDependencies": {
@@ -41,7 +40,7 @@
     "karma-webpack": "^2.0.13",
     "style-loader": "^0.20.2",
     "uglifyjs-webpack-plugin": "^1.2.2",
-    "webpack": "4.19.1",
+    "webpack": "^4.19.1",
     "webpack-cli": "^2.0.9",
     "webpack-dev-server": "^3.1.0"
   }
