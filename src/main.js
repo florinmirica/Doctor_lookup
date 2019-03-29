@@ -14,3 +14,23 @@ $(document).ready(function() {
     let searchTypeLabel = $(this).text();
     $("#searchType").text(searchTypeLabel + " ");
   });
+  $("#submit").click(function() {
+    let searchParameter = $("#searchParameter").val();
+    $("#searchParameter").val("");
+    let location = $("#location").val();
+    $("#location").val("");
+    $(".result p").val("");
+
+    let newDoctorInfo = new DoctorDetails();
+    let promise = newDoctorInfo.getDoctor(searchType, searchParameter,location);
+
+    promise.then(
+      function(response) {
+        let body = JSON.parse(response);
+        if (body.data.length === 0) {
+          $("#resultNone").append("No doctor found!");
+          $("#resultAvail").hide();
+        } else {
+          $("#resultAvail").show();
+          for (let doc in body.data) {
+            let path = body.data[doc].practices[0];
