@@ -34,3 +34,29 @@ $(document).ready(function() {
           $("#resultAvail").show();
           for (let doc in body.data) {
             let path = body.data[doc].practices[0];
+
+            $("#firstName").append(`${body.data[doc].profile.first_name}<br>`);
+          $("#lastName").append(`${body.data[doc].profile.last_name}<br>`);
+          $("#address").append(
+            `${path.visit_address.street}, ${path.visit_address.city}<br>`
+          );
+          $("#phone").append(`${path.phones[0].number}<br>`);
+          if (!path.website == undefined) {
+            $("#web").append(`${path.website}<br>`);
+          } else {
+            $("#web").append(`N/A<br>`);
+          }
+          let acceptingStatus;
+          acceptingStatus = path.accepts_new_patients === true ? "Yes" : "No";
+          $("#accepting").append(`${acceptingStatus}<br>`);
+        }
+      }
+    },
+    function(error) {
+      $("#errors").text(
+        `There was an error processing your request: ${error.message}`
+      );
+    }
+  );
+});
+});
